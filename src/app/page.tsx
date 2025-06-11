@@ -1,103 +1,90 @@
-import Image from "next/image";
+import { Metadata } from "next";
+import { Button } from "@/components/ui/button";
+import { Share2, Instagram, Twitter } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "나만의 MBTI 고양이에게 타로 조언받기 | 김웽탁 작가와 함께",
+  description:
+    "고양이와 함께하는 성격 해석과 타로 조언, 지금 시작해보세요! 김웽탁 작가의 따뜻한 일러스트와 함께하는 특별한 MBTI 테스트",
+  keywords: "MBTI, 타로, 고양이, 김웽탁, 성격테스트, 타로카드",
+};
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-gradient-to-b from-pink-50 via-yellow-50 to-mint-50 relative overflow-hidden">
+      {/* 배경 패턴 요소들 */}
+      <div className="absolute inset-0 pointer-events-none opacity-10">
+        {/* 여기에 고양이 발바닥, 별, 달 등의 패턴 요소들이 들어갈 예정입니다 */}
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <main className="container mx-auto px-4 py-8 max-w-[500px] min-h-screen flex flex-col items-center justify-between">
+        {/* 상단 섹션 */}
+        <div className="flex-1 flex flex-col items-center justify-center gap-6 w-full text-center">
+          {/* 고양이 일러스트 영역 */}
+          <div className="relative w-[280px] h-[280px] mb-4">
+            {/* 여기에 고양이 일러스트가 들어갈 예정입니다 */}
+            <div className="w-full h-full bg-pink-100 rounded-full animate-pulse" />
+          </div>
+
+          <h1 className="text-2xl font-bold text-gray-800 tracking-tight">
+            나만의 MBTI 고양이에게
+            <br />
+            타로 조언받기
+          </h1>
+
+          <p className="text-gray-600 text-sm leading-relaxed max-w-[320px]">
+            고양이와 함께하는 성격 해석과 타로 조언,
+            <br />
+            지금 시작해보세요!
+          </p>
+
+          <div className="flex flex-col gap-3 w-full max-w-[280px] mt-4">
+            <Button
+              size="lg"
+              className="bg-pink-400 hover:bg-pink-500 text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
+              aria-label="테스트 시작"
+            >
+              테스트 시작하기
+            </Button>
+
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-pink-200 text-gray-600 hover:bg-pink-50"
+            >
+              고양이 소개 보기
+            </Button>
+          </div>
         </div>
+
+        {/* 하단 섹션 */}
+        <footer className="w-full py-6 flex flex-col items-center gap-4">
+          <div className="flex gap-4">
+            <button
+              className="p-2 text-gray-500 hover:text-pink-400 transition-colors"
+              aria-label="카카오톡으로 공유하기"
+            >
+              <Share2 className="w-5 h-5" />
+            </button>
+            <button
+              className="p-2 text-gray-500 hover:text-pink-400 transition-colors"
+              aria-label="인스타그램으로 공유하기"
+            >
+              <Instagram className="w-5 h-5" />
+            </button>
+            <button
+              className="p-2 text-gray-500 hover:text-pink-400 transition-colors"
+              aria-label="트위터로 공유하기"
+            >
+              <Twitter className="w-5 h-5" />
+            </button>
+          </div>
+
+          <small className="text-gray-400 text-xs">
+            일러스트: 김웽탁 | 기획 및 제작: 꼬기
+          </small>
+        </footer>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
