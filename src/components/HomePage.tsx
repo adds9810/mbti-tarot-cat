@@ -3,18 +3,20 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { RiKakaoTalkFill } from "react-icons/ri";
-import { FaInstagram, FaTwitter } from "react-icons/fa";
+import { BiLogoFacebook } from "react-icons/bi";
+import { FaXTwitter } from "react-icons/fa6";
 import { motion, AnimatePresence } from "framer-motion";
+import { MdShare } from "react-icons/md";
 
 const mentList = [
-  "오늘도 운명을 점쳐볼까?",
-  "냥~ MBTI 궁금하지?",
-  "고양이와 함께하는 타로 시간!",
-  "운명의 카드를 뽑아봐요!",
-  "고양이도 궁금한 당신의 미래!",
-  "집사야, 오늘은 왠지 좋은 일이 생길 것 같아!",
-  "고양이의 촉, 믿어볼래?",
-  "타로카드보다 간식이 더 궁금한 고양이",
+  "운세 좀 볼 줄 아는 고양이~ 🐱",
+  "오늘 카드... 느낌이 와. 진짜임 🙀",
+  "냥촉 발동~ 믿어봐라옹",
+  "뽑아봐~ 나도 궁금함 😼",
+  "오늘 운세 쫌 있음 ✨",
+  "타로? 몰라도 해줄게 🐾",
+  "믿든 말든~ 고양이 감임",
+  "왜 자꾸 맞지...? 무섭다옹 😹",
 ];
 
 export default function HomePage() {
@@ -42,8 +44,8 @@ export default function HomePage() {
     <motion.div
       initial={{ backgroundPosition: "0% 50%" }}
       animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
-      transition={{ duration: 15, ease: "easeInOut", repeat: Infinity }}
-      className="min-h-screen bg-[length:400%_400%] bg-gradient-to-br from-purple-50 via-orange-50 to-mint-50 relative overflow-hidden"
+      transition={{ duration: 5, ease: "easeInOut", repeat: Infinity }}
+      className="min-h-screen bg-[length:400%_400%] bg-gradient-to-br from-purple-100 via-orange-100 to-mint-50 relative overflow-hidden"
     >
       {/* <div className="absolute inset-0 pointer-events-none opacity-10">
         <div className="absolute top-1/4 left-1/4 w-8 h-8 bg-pink-200 rounded-full transform rotate-45" />
@@ -72,7 +74,7 @@ export default function HomePage() {
 
       <div className="container mx-auto px-4 pt-14 max-w-[500px] min-h-screen flex flex-col items-center justify-between">
         <main className="flex-1 flex flex-col items-center justify-center gap-6 w-full text-center relative">
-          <div className="relative mb-4 group">
+          <div className="relative mb-4">
             <motion.div
               animate={
                 animateCat
@@ -80,7 +82,7 @@ export default function HomePage() {
                   : { scale: 1, rotate: 0 }
               }
               transition={{ duration: 0.6 }}
-              className="w-full h-full bg-gradient-to-br from-pink-100 to-orange-100 rounded-[2rem] shadow-lg"
+              className="w-full h-full bg-gradient-to-br from-[pink-100] to-orange-100 rounded-[2rem] shadow-lg"
             >
               <img
                 src="https://placehold.co/280x280"
@@ -98,51 +100,53 @@ export default function HomePage() {
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                   className="absolute -top-4 -right-4 bg-white/90 px-4 py-2 rounded-2xl shadow-lg origin-bottom-right"
                 >
-                  <span className="text-sm font-medium text-gray-700">
-                    {randomMent} 🐱
+                  <span className="text-md font-medium font-omyu text-gray-700">
+                    {randomMent}
                   </span>
                 </motion.div>
               )}
             </AnimatePresence>
           </div>
 
-          <h1 className="text-3xl font-bold text-gray-800 tracking-tight">
-            나를 닮은 고양이에게
+          <h1 className="text-4xl font-gangwon font-bold text-gray-800 tracking-tight">
+            {/* 나를 닮은 고양이에게
             <br />
-            타로 조언받기
+            타로 한마디 */}
+            타로냥이의 딱! 한마디
           </h1>
 
-          <p className="text-gray-600 text-base leading-relaxed max-w-[320px] relative">
-            고양이가 알려주는 내 성격과 운세,
+          <p className="text-gray-600 text-2xl font-medium font-omyu max-w-[320px] relative">
+            냥냥이 점집, 오늘은 네 차례냐옹~
             <br />
-            한번 들어볼래요?🐾
+            일단 들어오라옹~! 🐾
             <span className="absolute -right-6 -top-2 text-2xl animate-[wiggle_1s_ease-in-out_infinite]">
               ✨
             </span>
           </p>
 
-          <div className="flex flex-col gap-3 w-full max-w-[280px] mt-4">
+          <div className="flex flex-col gap-3 w-full max-w-[365px] mt-4">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-pink-400 to-orange-400 hover:from-pink-500 hover:to-orange-500 text-white font-medium text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5"
+              className="font-omyu text-3xl py-8 font-bold bg-gradient-to-r from-pink-400 to-orange-400 hover:from-pink-500 hover:to-orange-500 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5 active:scale-95 active:translate-y-0 active:shadow-sm"
               aria-label="테스트 시작"
             >
-              테스트 시작하기 😺
+              시작하기 😺
             </Button>
-
-            <div className="flex gap-2">
-              <Button
-                variant="outline"
-                size="lg"
-                className="flex-1 border-pink-200 text-gray-600 hover:bg-pink-50 rounded-full hover:scale-105 transition-transform"
-              >
-                고양이 소개 보기 💡
-              </Button>
-            </div>
+            {/* <Button
+              variant="outline"
+              size="lg"
+              className=" border-pink-200 text-gray-600 hover:bg-pink-50 rounded-full hover:scale-105 transition-transform active:scale-95 active:translate-y-0 active:shadow-sm"
+            >
+              고양이 소개 🐾
+            </Button> */}
+            <p className="font-bold text-black">참여자수 | 1,234명</p>
           </div>
         </main>
 
         <footer className="w-full pt-8 pb-6 flex flex-col items-center gap-4">
+          <div className="flex items-center gap-2 text-bold text-sm font-bold">
+            테스트 공유하기 <MdShare />
+          </div>
           <div className="flex gap-4">
             <button
               className="p-2 rounded-full bg-[#FEE500] hover:brightness-105 transition-all"
@@ -151,16 +155,16 @@ export default function HomePage() {
               <RiKakaoTalkFill className="text-[#3C1E1E] text-xl" />
             </button>
             <button
-              className="p-2 rounded-full bg-pink-100 hover:bg-pink-200 transition-all"
-              aria-label="인스타그램으로 공유하기"
+              className="p-2 rounded-full bg-[#CFE8F9] hover:bg-[#B0DAF2] transition-all"
+              aria-label="페이스북으로 공유하기"
             >
-              <FaInstagram className="text-pink-600 text-xl" />
+              <BiLogoFacebook className="text-[#1DA1F2] text-xl" />
             </button>
             <button
-              className="p-2 rounded-full bg-[#CFE8F9] hover:bg-[#B0DAF2] transition-all"
+              className="p-2 rounded-full bg-black hover:bg-gray-600 transition-all"
               aria-label="트위터로 공유하기"
             >
-              <FaTwitter className="text-[#1DA1F2] text-xl" />
+              <FaXTwitter className="text-white text-xl" />
             </button>
           </div>
 
