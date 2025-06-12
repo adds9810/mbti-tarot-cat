@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/layouts/header";
+import Footer from "@/components/layouts/footer";
+import AnimatedBackground from "@/components/layouts/AnimatedBackground";
 
 const notoSansKR = Noto_Sans_KR({
   variable: "--font-noto-sans",
@@ -9,21 +12,28 @@ const notoSansKR = Noto_Sans_KR({
 });
 
 export const metadata: Metadata = {
-  title:
-    "나만의 MBTI 고양이에게 타로 조언받기 | 김웽탁 작가와 함께하는 고양이 비급",
-  description:
-    "고양이 비급의 조언이 오늘도 내 운명을 알려줄 예정! 김웽탁 작가의 따뜻한 일러스트와 함께하는 특별한 MBTI 타로 테스트",
-  keywords: "MBTI, 타로, 고양이, 김웽탁, 고양이비급, 타로카드, 성격테스트",
+  title: "나를 닮은 고양이에게 타로 한마디!",
+  description: "고양이 타로 테스트",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="ko">
-      <body className={`${notoSansKR.variable} antialiased`}>{children}</body>
+      <body className={`${notoSansKR.variable} antialiased`}>
+        <AnimatedBackground>
+          <Header />
+          <div className="container mx-auto px-4 pt-14 max-w-[500px] min-h-screen flex flex-col items-center justify-between">
+            <main className="flex-1 flex flex-col items-center justify-center gap-6 w-full text-center relative">
+              {children}
+            </main>
+            <Footer />
+          </div>
+        </AnimatedBackground>
+      </body>
     </html>
   );
 }
