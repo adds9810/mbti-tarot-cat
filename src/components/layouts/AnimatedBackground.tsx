@@ -11,7 +11,7 @@ export default function AnimatedBackground({
       initial={{ backgroundPosition: "0% 50%" }}
       animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
       transition={{ duration: 15, ease: "easeInOut", repeat: Infinity }}
-      className="min-h-screen bg-[length:400%_400%] bg-gradient-to-br from-purple-300 via-orange-300 to-mint-50 relative overflow-hidden"
+      className="min-h-screen bg-[length:400%_400%] bg-gradient-to-br from-purple-200 via-orange-200 to-mint-50 relative overflow-hidden"
     >
       {children}
     </motion.div>

@@ -119,7 +119,7 @@ const MBTIStep = () => {
   const currentQ = questions[currentQuestion];
 
   return (
-    <div className="space-y-6 animate-fade-in font-omyu mt-2">
+    <div className="space-y-6 animate-fade-in mt-2">
       <div className="text-center">
         <p className="text-md text-gray-500">
           {currentQuestion + 1}번째 질문이다옹!
@@ -137,7 +137,7 @@ const MBTIStep = () => {
             className="w-full h-auto py-4 px-4 text-left bg-white hover:bg-pink-50 border-pink-200 hover:border-pink-300 transition-all duration-200"
             onClick={() => handleAnswer(option.value as any)}
           >
-            <span className=" text-lg">{option.text}</span>
+            <span className="text-lg">{option.text}</span>
           </Button>
         ))}
       </div>

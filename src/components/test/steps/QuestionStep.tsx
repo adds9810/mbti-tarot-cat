@@ -8,8 +8,8 @@ import { Input } from "@/components/ui/input";
 const defaultQuestions = [
   "오늘의 운세가 궁금해요 ✨",
   "앞으로의 미래가 궁금해요 🌟",
-  "지금 고민하는 일의 해결책이 궁금해요 💫",
-  "나의 숨겨진 재능이 궁금해요 🎨",
+  // "지금 고민하는 일의 해결책이 궁금해요 💫",
+  // "나의 숨겨진 재능이 궁금해요 🎨",
   "인간관계에 대한 조언이 필요해요 💝",
 ];
 
@@ -33,14 +33,14 @@ const QuestionStep = () => {
   };
 
   return (
-    <div className="space-y-6 animate-fade-in">
+    <div className="space-y-6 animate-fade-in mt-2">
       <div className="text-center space-y-2">
-        <h2 className="text-xl font-bold text-gray-800">
-          어떤 것이 궁금하신가요? 😺
-        </h2>
-        <p className="text-sm text-gray-500">
-          고양이가 타로카드로 답변해드릴게요!
+        <p className="text-md text-gray-500">
+          타로냥이 출동~ 뭐든 물어보라옹! 🐾
         </p>
+        <h2 className="text-2xl font-bold text-gray-800">
+          자, 뭐가 궁금해? 😼
+        </h2>
       </div>
 
       {!isCustom ? (
@@ -53,14 +53,14 @@ const QuestionStep = () => {
                 className="w-full h-auto py-4 px-4 text-left bg-white hover:bg-pink-50 border-pink-200 hover:border-pink-300 transition-all duration-200"
                 onClick={() => handleQuestionSelect(question)}
               >
-                <span className="text-base">{question}</span>
+                <span className="text-lg">{question}</span>
               </Button>
             ))}
           </div>
 
           <Button
             variant="ghost"
-            className="w-full text-pink-500 hover:text-pink-600 hover:bg-pink-50"
+            className="w-full text-pink-500 hover:text-pink-600 hover:bg-pink-50 text-md"
             onClick={() => setIsCustom(true)}
           >
             직접 질문하기 ✍️
@@ -70,7 +70,7 @@ const QuestionStep = () => {
         <div className="space-y-4">
           <Input
             type="text"
-            placeholder="궁금한 점을 입력해주세요..."
+            placeholder="궁금한 점을 입력해주세요."
             value={customQuestion}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setCustomQuestion(e.target.value)

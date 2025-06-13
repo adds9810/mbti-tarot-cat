@@ -16,9 +16,9 @@ const ShuffleStep = () => {
           clearInterval(shuffleInterval);
           setShowMessage(true);
           // 메시지 표시 후 다음 단계로
-          setTimeout(() => {
-            setCurrentStep(4);
-          }, 1500);
+          // setTimeout(() => {
+          //   setCurrentStep(4);
+          // }, 1500);
           return prev;
         }
         return prev + 1;
@@ -29,11 +29,11 @@ const ShuffleStep = () => {
   }, [setCurrentStep]);
 
   return (
-    <div className="space-y-6 animate-fade-in">
+    <div className="space-y-6 animate-fade-in mt-2">
       <div className="text-center space-y-4">
-        <div className="relative w-48 h-64 mx-auto">
-          {/* 고양이 캐릭터 */}
-          <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-32 h-32 bg-pink-100 rounded-full animate-bounce">
+        <div className="w-48 mx-auto mt-8 mb-10 flex flex-col items-center justify-center">
+          {/* h-64 고양이 캐릭터 absolute -top-8 -translate-y-full left-1/2 -translate-x-1/2  */}
+          <div className="w-32 h-32 bg-pink-100 rounded-full animate-bounce">
             {/* 여기에 고양이 일러스트가 들어갈 예정입니다 */}
             <div className="w-full h-full flex items-center justify-center text-4xl">
               😺
@@ -41,7 +41,7 @@ const ShuffleStep = () => {
           </div>
 
           {/* 타로 카드들 */}
-          <div className="relative w-full h-full">
+          <div className="relative w-full h-64 mt-4">
             {[...Array(5)].map((_, index) => (
               <div
                 key={index}
