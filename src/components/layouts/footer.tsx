@@ -4,14 +4,19 @@ import { RiKakaoTalkFill } from "react-icons/ri";
 import { BiLogoFacebook } from "react-icons/bi";
 import { FaXTwitter } from "react-icons/fa6";
 import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
 
 export default function Footer() {
   const pathname = usePathname();
-
-  const isTestPage = pathname === "/test";
+  const isPage = pathname === "/" || pathname.startsWith("/result");
   return (
-    <footer className="w-full pt-8 pb-6 flex flex-col items-center gap-4">
-      {!isTestPage && (
+    <motion.footer
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.7, duration: 0.5 }}
+      className="w-full pt-8 pb-6 flex flex-col items-center gap-4"
+    >
+      {isPage && (
         <>
           <div className="flex items-center gap-2 text-bold text-sm font-bold">
             테스트 공유하기 <MdShare />
@@ -42,6 +47,6 @@ export default function Footer() {
       <small className="text-gray-500 text-xs bg-white/50 px-4 py-2 rounded-full">
         일러스트: 김웽탁 | 기획 및 제작: 꼬기 🙆‍♀️✨
       </small>
-    </footer>
+    </motion.footer>
   );
 }

@@ -37,8 +37,14 @@ export default function HomePage() {
   }, []);
 
   return (
-    <>
-      <div className="relative mb-4">
+    <div className="flex flex-col items-center gap-6">
+      {/* 고양이 이미지 */}
+      <motion.div
+        className="relative mb-4"
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: [0.5, 1.05, 1], opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
         <motion.div
           animate={
             animateCat ? { scale: 1.05, rotate: 2 } : { scale: 1, rotate: 0 }
@@ -68,22 +74,40 @@ export default function HomePage() {
             </motion.div>
           )}
         </AnimatePresence>
-      </div>
+      </motion.div>
 
-      <h1 className="text-4xl font-gangwon font-bold text-gray-800 tracking-tight">
+      {/* 제목 */}
+      <motion.h1
+        className="text-4xl font-gangwon font-bold text-gray-800 tracking-tight"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2, duration: 0.5 }}
+      >
         타로냥이의 딱! 한마디
-      </h1>
+      </motion.h1>
 
-      <p className="text-gray-600 text-2xl font-medium font-omyu max-w-[320px] relative">
+      {/* 설명 */}
+      <motion.p
+        className="text-gray-600 text-2xl font-medium font-omyu max-w-[320px] relative"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4, duration: 0.5 }}
+      >
         냥냥이 점집, 오늘은 네 차례냐옹~
         <br />
         일단 들어오라옹~! 🐾
-        <span className="absolute -right-6 -top-2 text-2xl animate-[wiggle_1s_ease-in-out_infinite]">
+        <span className="absolute -right-6 -top-2 text-2xl animate-wiggle">
           ✨
         </span>
-      </p>
+      </motion.p>
 
-      <div className="flex flex-col gap-3 w-full max-w-[365px] mt-4">
+      {/* 버튼과 참여자수 */}
+      <motion.div
+        className="flex flex-col gap-3 w-full max-w-[365px] mt-4"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6, duration: 0.5 }}
+      >
         <Link
           href="/test"
           className="font-omyu text-3xl py-4 font-bold bg-gradient-to-r from-pink-400 to-orange-400 hover:from-pink-500 hover:to-orange-500 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-0.5 active:scale-95 active:translate-y-0 active:shadow-sm"
@@ -91,15 +115,8 @@ export default function HomePage() {
         >
           시작하기 😺
         </Link>
-        {/* <Button
-              variant="outline"
-              size="lg"
-              className=" border-pink-200 text-gray-600 hover:bg-pink-50 rounded-full hover:scale-105 transition-transform active:scale-95 active:translate-y-0 active:shadow-sm"
-            >
-              고양이 소개 🐾
-            </Button> */}
         <p className="font-bold text-black">참여자수 | 1,234명</p>
-      </div>
-    </>
+      </motion.div>
+    </div>
   );
 }

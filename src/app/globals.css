@@ -154,7 +154,9 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.553 0.013 58.071);
 }
-
+* {
+  word-break: keep-all;
+}
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -182,7 +184,7 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
   }
 }
 
@@ -302,7 +304,7 @@
   }
 
   .animate-bounce {
-    animation: bounce 1s ease-in-out infinite;
+    animation: bounce 2s linear infinite;
   }
 
   .animate-pulse {
@@ -339,5 +341,19 @@
 
   .backface-hidden {
     backface-visibility: hidden;
+  }
+
+  /* 애니메이션 딜레이 유틸리티 */
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+  .delay-400 {
+    animation-delay: 400ms;
   }
 }

@@ -25,9 +25,9 @@ const TestContainer = () => {
 
   return (
     <section className="w-full flex flex-col items-center justify-center">
-      <div className="w-full max-w-[400px] bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg p-6 relative font-omyu">
+      <div className="w-full max-w-[400px] bg-white/80 backdrop-blur-sm rounded-3xl shadow-lg p-6 font-omyu">
         {/* 진행 상태 표시 */}
-        <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-pink-100 px-4 py-1 rounded-full text-sm font-medium text-pink-600">
+        <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-max bg-pink-100 px-4 py-1 rounded-full text-sm font-medium text-pink-600">
           {currentStep}/5 단계! {stepTitles[currentStep - 1]}
         </div>
 
