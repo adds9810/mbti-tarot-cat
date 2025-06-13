@@ -1,7 +1,7 @@
 "use client";
 import { MdShare } from "react-icons/md";
 import { RiKakaoTalkFill } from "react-icons/ri";
-import { BiLogoFacebook } from "react-icons/bi";
+import { FaFacebook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
@@ -23,22 +23,22 @@ export default function Footer() {
           </div>
           <div className="flex gap-4">
             <button
-              className="p-2 rounded-full bg-[#FEE500] hover:brightness-105 transition-all"
+              className="p-3 bg-yellow-300 hover:bg-yellow-400 rounded-full transition-colors"
               aria-label="카카오톡으로 공유하기"
             >
-              <RiKakaoTalkFill className="text-[#3C1E1E] text-xl" />
+              <RiKakaoTalkFill className="w-6 h-6" />
             </button>
             <button
-              className="p-2 rounded-full bg-[#CFE8F9] hover:bg-[#B0DAF2] transition-all"
+              className="p-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-colors"
               aria-label="페이스북으로 공유하기"
             >
-              <BiLogoFacebook className="text-[#1DA1F2] text-xl" />
+              <FaFacebook className="w-6 h-6" />
             </button>
             <button
-              className="p-2 rounded-full bg-black hover:bg-gray-600 transition-all"
-              aria-label="트위터로 공유하기"
+              className="p-3 bg-black hover:bg-gray-800 text-white rounded-full transition-colors"
+              aria-label="X(트위터)로 공유하기"
             >
-              <FaXTwitter className="text-white text-xl" />
+              <FaXTwitter className="w-6 h-6" />
             </button>
           </div>
         </>

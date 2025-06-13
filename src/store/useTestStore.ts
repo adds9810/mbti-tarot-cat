@@ -14,6 +14,7 @@ export type TestState = {
   // 타로 관련
   question: string;
   selectedCard: number | null;
+  output: string;
 
   // UI 상태
   currentStep: number;
@@ -36,6 +37,7 @@ const initialState = {
   selectedCard: null,
   currentStep: 1,
   isQuestionCustom: false,
+  output: "",
 };
 
 export const useTestStore = create<TestState>()(
