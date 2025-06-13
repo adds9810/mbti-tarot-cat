@@ -33,12 +33,12 @@ const ShuffleStep = () => {
       <div className="text-center space-y-4">
         <div className="w-48 mx-auto mt-8 mb-10 flex flex-col items-center justify-center">
           {/* h-64 고양이 캐릭터 absolute -top-8 -translate-y-full left-1/2 -translate-x-1/2 */}
-          <div className=" w-32 h-32 bg-pink-100 rounded-full animate-bounce ">
-            {/* 여기에 고양이 일러스트가 들어갈 예정입니다 */}
+          {/* <div className=" w-32 h-32 bg-pink-100 rounded-full animate-bounce ">
+            {/* 여기에 고양이 일러스트가 들어갈 예정입니다 
             <div className="w-full h-full flex items-center justify-center text-4xl">
               😺
             </div>
-          </div>
+          </div> */}
 
           {/* 타로 카드들 */}
           <div className="relative w-full h-64 mt-4">

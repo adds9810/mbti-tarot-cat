@@ -57,10 +57,10 @@ const CardSelectStep = () => {
         <p className="text-sm text-gray-500">
           직감적으로 끌리는 카드가 당신의 운명을 알려줄 거예요!
         </p>
-        {/* 고양이 이모지 원 - 텍스트 위에 겹치지 않게 */}
+        {/* 고양이 이모지 원 - 텍스트 위에 겹치지 않게
         <div className="absolute left-1/2 -translate-x-1/2 -top-12 -translate-y-full w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center text-3xl shadow z-10 ">
           😺
-        </div>
+        </div> */}
       </div>
 
       {/* 카드 그리드 */}

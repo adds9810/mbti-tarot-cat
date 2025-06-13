@@ -9,7 +9,7 @@ const LoadingStep = () => {
     mbtiResult,
     question,
     selectedCard,
-    setMbtiResult, // Gemini 결과 저장용
+    setOutput, // Gemini 결과 저장용
   } = useTestStore();
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const LoadingStep = () => {
 
         const data = await response.json();
         if (data.output) {
-          setMbtiResult(data.output);
+          setOutput(data.output); // Gemini 결과 저장
           setTimeout(() => router.push("/result"), 1500);
         } else {
           console.error("Gemini 응답 없음:", data);
@@ -40,23 +40,23 @@ const LoadingStep = () => {
     if (mbtiResult && question && selectedCard !== null) {
       fetchGeminiResult();
     }
-  }, [mbtiResult, question, selectedCard, setMbtiResult, router]);
+  }, [mbtiResult, question, selectedCard, setOutput, router]);
 
   return (
     <div className="space-y-8 animate-fade-in">
       <div className="text-center space-y-4">
-        {/* 고양이 캐릭터 absolute top-0 left-1/2 -translate-x-1/2 */}
+        {/* 고양이 캐릭터 absolute top-0 left-1/2 -translate-x-1/2 
         <div className="relative w-32 h-32 mx-auto">
           <div className="inset-0 bg-pink-100 rounded-full animate-pulse w-full h-full flex items-center justify-center">
             <div className="text-4xl">😺</div>
           </div>
-          {/* 말풍선 */}
+          {/* 말풍선
           {/* <div className="absolute -top-4 -right-4 bg-white px-4 py-2 rounded-2xl shadow-lg animate-bounce">
             <span className="text-sm font-medium text-gray-700">
               카드를 분석중이에요... ✨
             </span>
-          </div> */}
-        </div>
+          </div> 
+        </div>*/}
 
         <div className="space-y-2">
           <h2 className="text-xl font-bold text-gray-800">

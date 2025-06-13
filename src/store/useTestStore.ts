@@ -27,6 +27,7 @@ export type TestState = {
   setSelectedCard: (cardId: number) => void;
   setCurrentStep: (step: number) => void;
   setIsQuestionCustom: (isCustom: boolean) => void;
+  setOutput: (output: string) => void;
   resetTest: () => void;
 };
 
@@ -56,15 +57,11 @@ export const useTestStore = create<TestState>()(
         })),
 
       setMbtiResult: (result) => set({ mbtiResult: result }),
-
       setQuestion: (question) => set({ question }),
-
       setSelectedCard: (cardId) => set({ selectedCard: cardId }),
-
       setCurrentStep: (step) => set({ currentStep: step }),
-
       setIsQuestionCustom: (isCustom) => set({ isQuestionCustom: isCustom }),
-
+      setOutput: (output) => set({ output }),
       resetTest: () => set(initialState),
     }),
     {

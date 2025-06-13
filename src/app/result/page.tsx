@@ -13,9 +13,9 @@ import { motion } from "framer-motion";
 // import Image from "next/image";
 import { toast } from "react-hot-toast";
 import { FaDownload } from "react-icons/fa";
-// import { RiKakaoTalkFill } from "react-icons/ri";
-// import { FaXTwitter } from "react-icons/fa6";
-// import { FaFacebook } from "react-icons/fa";
+import { RiKakaoTalkFill } from "react-icons/ri";
+import { FaXTwitter } from "react-icons/fa6";
+import { FaFacebook } from "react-icons/fa";
 
 export default function Result() {
   const { mbtiResult, selectedCard, question, output } = useTestStore();
@@ -39,10 +39,24 @@ export default function Result() {
         animate={{ opacity: 1, y: 0 }}
         className="bg-white/90 rounded-2xl p-6 shadow-lg"
       >
-        <h2 className="text-2xl font-omyu font-bold text-center mb-4">
-          {mbtiResult} 🐱
+        <h2 className="text-2xl font-gangwon ont-bold text-center">
+          당신의 타로냥이
         </h2>
-        <p className="text-gray-700 font-gangwon mb-6">{mbtiResult} 설명영역</p>
+        <p className="text-gray-700 font-omyu mb-6 leading-tight font-bold text-2xl">
+          {/* {mbtiResult} 🐱 */} 시크한 도도냥
+        </p>
+        <img
+          src="https://placehold.co/280x280"
+          alt="과장된 표정으로 점을 치는 고양이"
+          className=" object-cover rounded-[2rem] mb-6 mx-auto"
+        />
+        <p className="text-gray-700 font-omyu mb-6 leading-tight">
+          {mbtiResult} 이해를 위한 설명영역 이해를 위한 설명영역 이해를 위한
+          설명영역 이해를 위한 설명영역 이해를 위한 설명영역 이해를 위한
+          설명영역 이해를 위한 설명영역 이해를 위한 설명영역 이해를 위한
+          설명영역 이해를 위한 설명영역 이해를 위한 설명영역 이해를 위한
+          설명영역
+        </p>
         <button
           onClick={() => handleDownload("mbti")}
           className="w-full bg-pink-100 hover:bg-pink-200 text-pink-700 font-omyu py-2 rounded-lg transition-colors flex items-center justify-center gap-2"
@@ -60,11 +74,11 @@ export default function Result() {
         className="bg-white/90 rounded-2xl p-6 shadow-lg"
       >
         <h2 className="text-2xl font-omyu font-bold text-center mb-4">
-          제미나이의 타로 해석 ✨
+          시크한 도도냥이가 말해주는 운세 ✨
         </h2>
         <div className="space-y-4">
           <div className="text-center">
-            <p className="text-gray-600 font-gangwon mb-2">당신의 질문</p>
+            <p className="text-gray-600 font-gangwon ">당신의 질문</p>
             <p className="font-omyu text-lg">{question}</p>
           </div>
 
@@ -76,11 +90,16 @@ export default function Result() {
               fill
               className="object-contain"
             /> */}
+            <img
+              src="https://placehold.co/280x320"
+              alt="과장된 표정으로 점을 치는 고양이"
+              className="w-full h-full object-cover rounded-[2rem]"
+            />
           </div>
 
           <div className="text-center">
             <h3 className="font-omyu text-xl mb-2">{selectedCard}</h3>
-            <p className="text-gray-700 font-gangwon whitespace-pre-line">
+            <p className="text-gray-700 font-omyu font-bold whitespace-pre-line">
               {output}
             </p>
           </div>
@@ -96,7 +115,7 @@ export default function Result() {
       </motion.article>
 
       {/* 공유 및 전체 저장 섹션 */}
-      {/* <motion.div
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4 }}
@@ -133,7 +152,64 @@ export default function Result() {
             <FaFacebook className="w-6 h-6" />
           </button>
         </div>
-      </motion.div> */}
+      </motion.div>
+
+      {/* 방문유형 통계 */}
+      <motion.article
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2 }}
+        className="bg-white/90 rounded-2xl p-6 shadow-lg"
+      >
+        <h2 className="text-2xl font-omyu font-bold text-center ">
+          운세를 많이 본 타로냥이 ✨
+        </h2>
+        <div className="space-y-4">
+          <div className="text-center">
+            <p className="font-omyu text-lg">
+              아래의 타로냥이가 여러문의 운세를 상담해드립니다.
+            </p>
+          </div>
+          <div className="flex flex-col w-full border-t-2 border-b-2 border-black">
+            <div className="flex w-full gap-4 items-center p-2 border-b-1">
+              <img
+                src="https://placehold.co/100x100"
+                alt="과장된 표정으로 점을 치는 고양이"
+                className="rounded-[2rem]"
+              />
+              <div className="text-left font-omyu">
+                <h3 className=" font-bold text-xl mb-2">1위</h3>
+                <p className="text-gray-700  whitespace-pre-line">
+                  시크한 타로냥이
+                </p>
+                {/* <small>(11.5%)</small> */}
+              </div>
+            </div>
+            <div className="flex w-full gap-4 items-center p-2">
+              <img
+                src="https://placehold.co/100x100"
+                alt="과장된 표정으로 점을 치는 고양이"
+                className="rounded-[2rem]"
+              />
+              <div className="text-left font-omyu">
+                <h3 className=" font-bold text-xl mb-2">2위</h3>
+                <p className="text-gray-700  whitespace-pre-line">
+                  시크한 타로냥이
+                </p>
+                {/* <small>(11.5%)</small> */}
+              </div>
+            </div>
+          </div>
+
+          <button
+            onClick={() => handleDownload("tarot")}
+            className="w-full bg-orange-100 hover:bg-purple-200 text-orange-700 font-omyu py-2 rounded-lg transition-colors flex items-center justify-center gap-2"
+            aria-label="타로 결과 이미지 저장하기"
+          >
+            다른 타로냥이 보러가기
+          </button>
+        </div>
+      </motion.article>
 
       {/* 다시하기 버튼 */}
       <motion.button
