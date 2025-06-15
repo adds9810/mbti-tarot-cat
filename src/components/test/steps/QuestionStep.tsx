@@ -13,7 +13,7 @@ const defaultQuestions = [
   "인간관계에 대한 조언이 필요해요 💝",
 ];
 
-const QuestionStep = () => {
+export default function QuestionStep() {
   const { setQuestion, setIsQuestionCustom, setCurrentStep } = useTestStore();
   const [customQuestion, setCustomQuestion] = useState("");
   const [isCustom, setIsCustom] = useState(false);
@@ -97,6 +97,4 @@ const QuestionStep = () => {
       )}
     </div>
   );
-};
-
-export default QuestionStep;
+}

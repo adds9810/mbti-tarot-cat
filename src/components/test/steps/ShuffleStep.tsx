@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useTestStore } from "@/store/useTestStore";
 
-const ShuffleStep = () => {
+export default function ShuffleStep() {
   const { setCurrentStep } = useTestStore();
   const [shuffleCount, setShuffleCount] = useState(0);
   const [showMessage, setShowMessage] = useState(false);
@@ -66,6 +66,4 @@ const ShuffleStep = () => {
       </div>
     </div>
   );
-};
-
-export default ShuffleStep;
+}

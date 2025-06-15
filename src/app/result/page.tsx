@@ -83,7 +83,6 @@ export default function Result() {
           </div>
 
           <div className="relative w-full aspect-[3/4] max-w-[200px] mx-auto">
-            {selectedCard}
             {/* <Image
               src={selectedCard.image}
               alt={`${selectedCard} 타로 카드`}
@@ -98,7 +97,9 @@ export default function Result() {
           </div>
 
           <div className="text-center">
-            <h3 className="font-omyu text-xl mb-2">{selectedCard}</h3>
+            <h3 className="font-omyu text-xl mb-2">
+              {selectedCard.emoji} {selectedCard.name}
+            </h3>
             <p className="text-gray-700 font-omyu font-bold whitespace-pre-line">
               {output}
             </p>

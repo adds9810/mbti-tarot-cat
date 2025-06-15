@@ -6,6 +6,11 @@ export type MBTIAnswer = {
   answer: "E" | "I" | "S" | "N" | "T" | "F" | "J" | "P";
 };
 
+interface CardInfo {
+  name: string;
+  emoji: string;
+}
+
 export type TestState = {
   // MBTI 검사 관련
   mbtiAnswers: MBTIAnswer[];
@@ -13,7 +18,7 @@ export type TestState = {
 
   // 타로 관련
   question: string;
-  selectedCard: number | null;
+  selectedCard: CardInfo;
   output: string;
 
   // UI 상태
@@ -24,7 +29,7 @@ export type TestState = {
   setMbtiAnswer: (answer: MBTIAnswer) => void;
   setMbtiResult: (result: string) => void;
   setQuestion: (question: string) => void;
-  setSelectedCard: (cardId: number) => void;
+  setSelectedCard: (card: CardInfo) => void;
   setCurrentStep: (step: number) => void;
   setIsQuestionCustom: (isCustom: boolean) => void;
   setOutput: (output: string) => void;
@@ -35,7 +40,7 @@ const initialState = {
   mbtiAnswers: [],
   mbtiResult: null,
   question: "",
-  selectedCard: null,
+  selectedCard: { name: "", emoji: "" },
   currentStep: 1,
   isQuestionCustom: false,
   output: "",
@@ -58,7 +63,7 @@ export const useTestStore = create<TestState>()(
 
       setMbtiResult: (result) => set({ mbtiResult: result }),
       setQuestion: (question) => set({ question }),
-      setSelectedCard: (cardId) => set({ selectedCard: cardId }),
+      setSelectedCard: (card) => set({ selectedCard: card }),
       setCurrentStep: (step) => set({ currentStep: step }),
       setIsQuestionCustom: (isCustom) => set({ isQuestionCustom: isCustom }),
       setOutput: (output) => set({ output }),

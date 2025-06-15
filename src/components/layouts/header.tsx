@@ -1,7 +1,25 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
+
 export default function Header() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10); // 10px 이상 스크롤하면 blur
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
-    <header className="fixed top-0 left-1/2 -translate-x-1/2 z-10 w-full max-w-[500px] mx-auto px-4 py-3 flex items-center justify-between">
+    <header
+      className={`fixed top-0 left-1/2 -translate-x-1/2 z-10 w-full max-w-[500px] mx-auto px-4 py-3 flex items-center justify-between ${
+        scrolled ? "bg-white/20 backdrop-blur-md" : "bg-transparent"
+      }`}
+    >
       <Link
         href="/"
         className="text-lg font-bold text-gray-800"

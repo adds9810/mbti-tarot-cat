@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 export default function Footer() {
   const pathname = usePathname();
-  const isPage = pathname === "/" || pathname.startsWith("/result");
+  const isPage = pathname === "/";
   return (
     <motion.footer
       initial={{ opacity: 0, y: 20 }}

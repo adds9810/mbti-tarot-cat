@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useTestStore } from "@/store/useTestStore";
-const LoadingStep = () => {
+export default function LoadingStep() {
   const router = useRouter();
   const {
     mbtiResult,
@@ -91,6 +91,4 @@ const LoadingStep = () => {
       </div>
     </div>
   );
-};
-
-export default LoadingStep;
+}

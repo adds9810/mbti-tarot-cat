@@ -1,5 +1,8 @@
 "use client";
 // import { Metadata } from "next";
+
+import { useEffect } from "react";
+import { useTestStore } from "@/store/useTestStore";
 import TestContainer from "@/components/test/TestContainer";
 
 // export const metadata: Metadata = {
@@ -10,5 +13,11 @@ import TestContainer from "@/components/test/TestContainer";
 // };
 
 export default function Test() {
+  const resetTest = useTestStore((state) => state.resetTest);
+
+  useEffect(() => {
+    resetTest();
+  }, [resetTest]);
+
   return <TestContainer />;
 }

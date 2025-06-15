@@ -72,7 +72,7 @@ const questions = [
   },
 ];
 
-const MBTIStep = () => {
+export default function MBTIStep() {
   const { mbtiAnswers, setMbtiAnswer, setMbtiResult, setCurrentStep } =
     useTestStore();
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -153,6 +153,4 @@ const MBTIStep = () => {
       </div>
     </div>
   );
-};
-
-export default MBTIStep;
+}

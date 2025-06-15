@@ -8,7 +8,7 @@ import ShuffleStep from "./steps/ShuffleStep";
 import CardSelectStep from "./steps/CardSelectStep";
 import LoadingStep from "./steps/LoadingStep";
 
-const TestContainer = () => {
+export default function TestContainer() {
   const { currentStep, resetTest } = useTestStore();
   const stepTitles = [
     "냥냥🐾 성향 테스트",
@@ -60,6 +60,4 @@ const TestContainer = () => {
       </div>
     </section>
   );
-};
-
-export default TestContainer;
+}

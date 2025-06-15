@@ -28,7 +28,7 @@ const majorArcana = [
   { name: "The World", emoji: "🌏" },
 ];
 
-const CardSelectStep = () => {
+export default function CardSelectStep() {
   const { setSelectedCard, setCurrentStep } = useTestStore();
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [isFlipping, setIsFlipping] = useState(false);
@@ -43,7 +43,8 @@ const CardSelectStep = () => {
     setSelectedIndex(index);
     setIsFlipping(true);
     setTimeout(() => {
-      setSelectedCard(index);
+      const selectedCard = cards[index]; // { name, emoji }
+      setSelectedCard(selectedCard); // 이모지와 이름 함께 저장
       setCurrentStep(5);
     }, 1000);
   };
@@ -100,15 +101,11 @@ const CardSelectStep = () => {
             `}
             >
               <span className="text-lg mb-1">{card.emoji}</span>
-              <span className="font-bold">
-                {index + 1}. {card.name}
-              </span>
+              <span className="font-bold">{card.name}</span>
             </div>
           </button>
         ))}
       </div>
     </div>
   );
-};
-
-export default CardSelectStep;
+}
